@@ -1,11 +1,11 @@
 pragma solidity ^0.5.0;
-//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20.sol";
 //import "./complexCityToken.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20Mintable.sol";
 
 
-contract ComVote is ERC20, ERC20Mintable{
+contract ComVote { is ERC20, ERC20Mintable{
     struct Poll{
         string name;
         string uri;
@@ -35,7 +35,7 @@ contract ComVote is ERC20, ERC20Mintable{
 
     modifier isVoter(uint pollId){
         //Poll storage poll = polls[pollId];
-        require(pollVoters[pollId][msg.sender], "You are not in that polls committee");
+        require(pollVoters[pollId][msg.sender], "You Have Voted Already! Please, remmember that you can cast only one vote! ");
         _;
     }
     

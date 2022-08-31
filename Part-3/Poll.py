@@ -150,7 +150,6 @@ if st.button("Vote"):
     st.write(f"This Address {address} Voted, and this is the receipt of the Vote counted:")
     st.write(dict(receipt))
 
-
 with st.container():
     st_lottie(results, height = 220, key="poll results gif")
 st.markdown("Voting Results:")
